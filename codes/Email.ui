@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+
+<class>EmailWindow</class>
+
+<widget class="QMainWindow" name="MainWindow">
+    
+    <property name="geometry">
+        <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1200</width>
+        <height>800</height>
+        </rect>
+    </property>
+
+    <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+
+    <property name="font">
+        <font>
+            <family>Arial</family>
+        </font>
+    </property>
+
+    <property name="windowTitle">
+        <string>Class Management</string>
+    </property>
+
+    <property name="styleSheet">
+        <string notr="true">QMainWindow{
+            background-color: rgb(246, 223, 200);
+        }
+        </string>
+    </property>
+
+    <widget class="QWidget" name="main">
+
+        <!-- ■ BackButton -->
+        <widget class="QPushButton" name="BackButton">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>25</y>
+                <width>100</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-image : url(resources/back_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-image : url(resources/back_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-image : url(resources/back_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string></string>
+            </property>
+
+        </widget>
+
+        <!-- ■ HomeButton-->
+        <widget class="QPushButton" name="HomeButton">
+
+            <property name="geometry">
+                <rect>
+                <x>1075</x>
+                <y>25</y>
+                <width>100</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <!-- use the home icon image -->
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-image : url(resources/home_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-image : url(resources/home_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-image : url(resources/home_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string></string>
+            </property>
+
+        </widget>
+
+        <!-- ■ EmailTitle-->
+        <widget class="QLabel" name="EmailTitle">
+
+            <property name="geometry">
+                <rect>
+                <x>160</x>
+                <y>20</y>
+                <width>440</width>
+                <height>60</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>30</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Email Course Info</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ CourseLabel -->
+        <widget class="QLabel" name="CourseLabel">
+            
+            <property name="geometry">
+                <rect>
+                <x>50</x>
+                <y>120</y>
+                <width>230</width>
+                <height>45</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        background-color: white; 
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>  Course Information</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ CourseContent-->
+        <widget class="QLabel" name="CourseContent">
+            
+            <property name="geometry">
+                <rect>
+                <x>300</x>
+                <y>120</y>
+                <width>850</width>
+                <height>180</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>50</weight>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>This is a placeholder course information</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeft|Qt::AlignLeading</set>
+            </property>
+
+        </widget>        
+
+        <!-- ■ ClassroomLabel -->
+        <widget class="QLabel" name="ClassroomLabel">
+            
+            <property name="geometry">
+                <rect>
+                <x>50</x>
+                <y>240</y>
+                <width>130</width>
+                <height>45</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        background-color: white; 
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>  Classroom</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ ClassroomContent-->
+        <widget class="QLabel" name="ClassroomContent">
+            
+            <property name="geometry">
+                <rect>
+                <x>200</x>
+                <y>240</y>
+                <width>950</width>
+                <height>60</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>50</weight>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>This is a placeholder class informationThis is a placeholder class informationThis is a placeholder class informationThis is a placeholder class information</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeft|Qt::AlignLeading</set>
+            </property>
+
+        </widget>     
+
+        <!-- ■ ZoomLabel -->
+        <widget class="QLabel" name="ZoomLabel">
+            
+            <property name="geometry">
+                <rect>
+                <x>50</x>
+                <y>300</y>
+                <width>130</width>
+                <height>45</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        background-color: white; 
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>  Zoom Link</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ ZoomContent-->
+        <widget class="QLabel" name="ZoomContent">
+            
+            <property name="geometry">
+                <rect>
+                <x>200</x>
+                <y>300</y>
+                <width>950</width>
+                <height>60</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>50</weight>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                        
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>This is a placeholder zoom link</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeft|Qt::AlignLeading</set>
+            </property>
+
+        </widget>     
+
+        <!-- ■ MessageLabel-->
+        <widget class="QLabel" name="MessageLabel">
+            
+            <property name="geometry">
+                <rect>
+                <x>50</x>
+                <y>360</y>
+                <width>130</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        background-color: white; 
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>  Messages</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ MessageContent-->
+        <widget class="QLabel" name="MessageContent">
+            
+            <property name="geometry">
+                <rect>
+                <x>200</x>
+                <y>360</y>
+                <width>950</width>
+                <height>120</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>50</weight>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                        
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>This is a placeholder message</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeft|Qt::AlignLeading</set>
+            </property>
+
+        </widget>  
+
+        <!-- ■ MaterialLabel -->
+        <widget class="QLabel" name="MaterialLabel">
+            
+            <property name="geometry">
+                <rect>
+                <x>50</x>
+                <y>480</y>
+                <width>130</width>
+                <height>45</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        background-color: white; 
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>  Materials</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ MaterialContent-->
+        <widget class="QLabel" name="MaterialContent">
+            
+            <property name="geometry">
+                <rect>
+                <x>200</x>
+                <y>480</y>
+                <width>950</width>
+                <height>120</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>50</weight>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                        
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>This is a placeholder material link</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeft|Qt::AlignLeading</set>
+            </property>
+
+        </widget> 
+
+        <!-- ■ EmailLabel-->
+        <widget class="QLabel" name="EmailLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>50</x>
+                <y>600</y>
+                <width>130</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>50</weight>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Send to email: </string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ EmailText-->
+        <widget class="QLineEdit" name="EmailText">
+
+            <property name="geometry">
+                <rect>
+                <x>200</x>
+                <y>600</y>
+                <width>680</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="autoFillBackground">
+                <bool>false</bool>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">QLineEdit {
+                    border: 2px solid lightgray;
+                    border-radius: 5px;
+                    background: transparent;
+                    }
+                </string>
+            </property>
+
+        </widget>
+
+        <!-- ■ EmailStudentSelect-->
+        <widget class="QComboBox" name="EmailStudentSelect">
+
+            <property name="geometry">
+                <rect>
+                <x>900</x>
+                <y>600</y>
+                <width>200</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+                </font>
+            </property>
+
+            <property name="acceptDrops">
+                <bool>false</bool>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QComboBox{
+                        combobox-popup: 3; 
+                        background: rgb(255, 255, 255);
+                        border: none;
+                        border-radius: 10px black solid;
+                        color: black;
+                        padding-left: 10px;
+                    }
+                </string>
+            </property>
+
+            <property name="editable">
+                <bool>false</bool>
+            </property>
+
+            <property name="frame">
+                <bool>true</bool>
+            </property>
+
+        </widget>
+
+        <!-- ■ EmailConfirm-->
+        <widget class="QPushButton" name="EmailConfirm">
+
+            <property name="geometry">
+                <rect>
+                <x>1110</x>
+                <y>600</y>
+                <width>50</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>√</string>
+            </property>
+
+        </widget>
+
+        <!-- ■ SendEmailButton -->
+        <widget class="QPushButton" name="SendEmailButton">
+
+            <property name="geometry">
+                <rect>
+                <x>500</x>
+                <y>670</y>
+                <width>200</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Send Email</string>
+            </property>
+
+        </widget>
+
+    </widget>
+
+</widget>
+   
+<resources/>
+<connections/>
+</ui>

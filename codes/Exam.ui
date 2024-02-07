@@ -1,0 +1,2914 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+
+<class>ExamWindow</class>
+
+<widget class="QMainWindow" name="MainWindow">
+
+    <!-- SETTING: WindowTitle-->
+    <property name="windowTitle">
+        <string>Exam Timetable</string>
+    </property>
+
+    <property name="geometry">
+        <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1200</width>
+        <height>800</height>
+        </rect>
+    </property>
+
+    <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+
+    <property name="font">
+        <font>
+            <family>Arial</family>
+        </font>
+    </property>
+
+    <property name="styleSheet">
+        <string notr="true">QMainWindow{
+            background-color: rgb(246, 223, 200);
+        }
+        </string>
+    </property>
+
+    <widget class="QWidget" name="main">
+
+        <!-- ■ (page title) ExamTitle-->
+        <widget class="QLabel" name="ExamTitle">
+
+            <property name="geometry">
+                <rect>
+                <x>160</x>
+                <y>20</y>
+                <width>440</width>
+                <height>60</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>30</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Examination Timetable</string>
+            </property>
+                
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ KeywordLabel-->
+        <widget class="QLabel" name="KeywordLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>100</y>
+                <width>110</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Keyword </string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ KeywordText-->
+        <widget class="QLineEdit" name="KeywordText">
+
+            <property name="geometry">
+                <rect>
+                <x>155</x>
+                <y>100</y>
+                <width>500</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="autoFillBackground">
+                <bool>false</bool>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">QLineEdit {
+                    border: 2px solid lightgray;
+                    border-radius: 5px;
+                    background: transparent;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string></string>
+            </property>
+
+        </widget>
+
+        <!-- ■ OrderByLabel -->
+        <widget class="QLabel" name="OrderByLabel">
+
+            <property name="geometry">
+                <rect>
+                    <x>680</x>
+                    <y>100</y>
+                    <width>100</width>
+                    <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+             <string notr="true">
+                        QLabel{
+                            color: rgb(0, 0, 0);
+                        }
+                    </string>
+            </property>
+
+            <property name="text">
+                <string>order by </string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ OrderBySelect -->
+        <widget class="QComboBox" name="OrderBySelect">
+
+            <property name="geometry">
+                <rect>
+                <x>800</x>
+                <y>100</y>
+                <width>150</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+                </font>
+            </property>
+
+            <property name="acceptDrops">
+                <bool>false</bool>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">QComboBox{
+                    background: rgb(255, 255, 255);
+                    border: none;
+                    border-radius: 10px black solid;
+                    color: black;
+                    padding-left: 10px;
+                }
+                </string>
+            </property>
+
+            <property name="editable">
+                <bool>false</bool>
+            </property>
+
+            <property name="frame">
+                <bool>true</bool>
+            </property>
+
+            <item>
+                <property name="text">
+                <string>Time</string>
+                </property>
+            </item>
+
+            <item>
+                <property name="text">
+                <string>Course</string>
+                </property>
+            </item>
+
+            <item>
+                <property name="text">
+                <string>Title</string>
+                </property>
+            </item>
+
+            <item>
+                <property name="text">
+                <string>Venue</string>
+                </property>
+            </item>
+
+            <item>
+                <property name="text">
+                <string>Format</string>
+                </property>
+            </item>
+
+        </widget>
+
+        <!-- ■ OrderByAscend -->
+        <widget class="QPushButton" name="OrderByAscend">
+
+            <property name="geometry">
+                <rect>
+                <x>965</x>
+                <y>100</y>
+                <width>30</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>↑</string>
+            </property>
+
+        </widget>
+
+        <!-- ■ OrderByDescend -->
+        <widget class="QPushButton" name="OrderByDescend">
+
+            <property name="geometry">
+                <rect>
+                <x>1010</x>
+                <y>100</y>
+                <width>30</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>↓</string>
+            </property>
+
+        </widget>
+
+        <!-- ■ SearchButton-->
+        <widget class="QPushButton" name="SearchButton">
+
+            <property name="geometry">
+                <rect>
+                <x>1075</x>
+                <y>100</y>
+                <width>100</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Search!</string>
+            </property>
+
+        </widget>
+
+        <!-- ■ BackButton-->
+        <widget class="QPushButton" name="BackButton">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>25</y>
+                <width>100</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-image : url(resources/back_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-image : url(resources/back_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-image : url(resources/back_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string></string>
+            </property>
+
+        </widget>
+
+        <!-- ■ HomeButton-->
+        <widget class="QPushButton" name="HomeButton">
+
+            <property name="geometry">
+                <rect>
+                <x>1075</x>
+                <y>25</y>
+                <width>100</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-image : url(resources/home_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-image : url(resources/home_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-image : url(resources/home_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string></string>
+            </property>
+
+        </widget>
+
+        <!-- Exam Table Headers -->
+        <!-- ■ DateLabel-->
+        <widget class="QLabel" name="DateLabel">
+            
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>160</y>
+                <width>125</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        background-color: white; 
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Date</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+        
+        <!-- ■ TimeLabel-->
+        <widget class="QLabel" name="TimeLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>170</x>
+                <y>160</y>
+                <width>160</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        background-color: white; 
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Time</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+    
+        <!-- ■ CourseCodeLabel-->
+        <widget class="QLabel" name="CourseCodeLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>350</x>
+                <y>160</y>
+                <width>120</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        background-color: white; 
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Course</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+    
+        <!-- ■ CourseTitleLabel-->
+        <widget class="QLabel" name="CourseTitleLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>490</x>
+                <y>160</y>
+                <width>360</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        background-color: white; 
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Title</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+    
+        <!-- ■ VenueLabel-->
+        <widget class="QLabel" name="VenueLabel">
+            
+            <property name="geometry">
+                <rect>
+                <x>870</x>
+                <y>160</y>
+                <width>100</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                        QLabel{
+                            background-color: white; 
+                            color: rgb(0, 0, 0);
+                        }
+                    </string>
+            </property>
+
+            <property name="text">
+                <string>Venue</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+    
+        <!-- ■ FormatLabel-->
+        <widget class="QLabel" name="FormatLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>990</x>
+                <y>160</y>
+                <width>185</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                        QLabel{
+                            background-color: white; 
+                            color: rgb(0, 0, 0);
+                        }
+                    </string>
+            </property>
+
+            <property name="text">
+                <string>Format</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ (placeholder) No Exam Found-->
+        <widget class="QLabel" name="NoExamFound">
+
+            <property name="geometry">
+                <rect>
+                <x>400</x>
+                <y>200</y>
+                <width>400</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>50</weight>
+                </font>
+            </property>
+
+            <property name="text">
+                <string></string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ (placeholder) Exam 1 to Exam 12-->
+        <widget class="QWidget" name="Exam1">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>200</y>
+                <width>1150</width>
+                <height>50</height>
+                </rect>
+            </property>
+        
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+        
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <widget class="QLabel" name="Date1Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>125</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Dec 14</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Time1Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>145</x>
+                    <y>0</y>
+                    <width>160</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>9:30am - 12:30pm</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+                
+            </widget>
+
+            <widget class="QLabel" name="CourseCode1Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>325</x>
+                    <y>0</y>
+                    <width>120</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>COMP3278</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="CourseTitle1Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>465</x>
+                    <y>0</y>
+                    <width>360</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>Introduction to database management systems</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Venue1Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>845</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>CPD-LG.07-10</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="Format1Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>965</x>
+                    <y>0</y>
+                    <width>185</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>One Cheatsheet</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+        </widget>
+
+        <widget class="QWidget" name="Exam2">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>235</y>
+                <width>1150</width>
+                <height>50</height>
+                </rect>
+            </property>
+        
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+        
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <widget class="QLabel" name="Date2Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>125</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Dec 14</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Time2Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>145</x>
+                    <y>0</y>
+                    <width>160</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>9:30am - 12:30pm</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+                
+            </widget>
+
+            <widget class="QLabel" name="CourseCode2Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>325</x>
+                    <y>0</y>
+                    <width>120</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>COMP3278</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="CourseTitle2Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>465</x>
+                    <y>0</y>
+                    <width>360</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>Introduction to database management systems</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Venue2Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>845</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>CPD-LG.07-10</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="Format2Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>965</x>
+                    <y>0</y>
+                    <width>185</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>One Cheatsheet</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+        </widget>
+
+        <widget class="QWidget" name="Exam3">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>270</y>
+                <width>1150</width>
+                <height>50</height>
+                </rect>
+            </property>
+        
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+        
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <widget class="QLabel" name="Date3Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>125</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Dec 14</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Time3Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>145</x>
+                    <y>0</y>
+                    <width>160</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>9:30am - 12:30pm</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+                
+            </widget>
+
+            <widget class="QLabel" name="CourseCode3Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>325</x>
+                    <y>0</y>
+                    <width>120</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>COMP3278</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="CourseTitle3Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>465</x>
+                    <y>0</y>
+                    <width>360</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>Introduction to database management systems</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Venue3Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>845</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>CPD-LG.07-10</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="Format3Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>965</x>
+                    <y>0</y>
+                    <width>185</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>One Cheatsheet</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+        </widget>  
+
+        <widget class="QWidget" name="Exam4">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>305</y>
+                <width>1150</width>
+                <height>50</height>
+                </rect>
+            </property>
+        
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+        
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <widget class="QLabel" name="Date4Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>125</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Dec 14</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Time4Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>145</x>
+                    <y>0</y>
+                    <width>160</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>9:30am - 12:30pm</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+                
+            </widget>
+
+            <widget class="QLabel" name="CourseCode4Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>325</x>
+                    <y>0</y>
+                    <width>120</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>COMP3278</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="CourseTitle4Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>465</x>
+                    <y>0</y>
+                    <width>360</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>Introduction to database management systems</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Venue4Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>845</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>CPD-LG.07-10</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="Format4Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>965</x>
+                    <y>0</y>
+                    <width>185</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>One Cheatsheet</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+        </widget>  
+
+        <widget class="QWidget" name="Exam5">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>340</y>
+                <width>1150</width>
+                <height>50</height>
+                </rect>
+            </property>
+        
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+        
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <widget class="QLabel" name="Date5Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>125</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Dec 14</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Time5Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>145</x>
+                    <y>0</y>
+                    <width>160</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>9:30am - 12:30pm</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+                
+            </widget>
+
+            <widget class="QLabel" name="CourseCode5Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>325</x>
+                    <y>0</y>
+                    <width>120</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>COMP3278</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="CourseTitle5Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>465</x>
+                    <y>0</y>
+                    <width>360</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>Introduction to database management systems</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Venue5Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>845</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>CPD-LG.07-10</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="Format5Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>965</x>
+                    <y>0</y>
+                    <width>185</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>One Cheatsheet</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+        </widget>  
+
+        <widget class="QWidget" name="Exam6">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>375</y>
+                <width>1150</width>
+                <height>50</height>
+                </rect>
+            </property>
+        
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+        
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <widget class="QLabel" name="Date6Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>125</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Dec 14</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Time6Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>145</x>
+                    <y>0</y>
+                    <width>160</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>9:30am - 12:30pm</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+                
+            </widget>
+
+            <widget class="QLabel" name="CourseCode6Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>325</x>
+                    <y>0</y>
+                    <width>120</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>COMP3278</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="CourseTitle6Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>465</x>
+                    <y>0</y>
+                    <width>360</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>Introduction to database management systems</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Venue6Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>845</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>CPD-LG.07-10</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="Format6Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>965</x>
+                    <y>0</y>
+                    <width>185</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>One Cheatsheet</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+        </widget>  
+
+        <widget class="QWidget" name="Exam7">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>410</y>
+                <width>1150</width>
+                <height>50</height>
+                </rect>
+            </property>
+        
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+        
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <widget class="QLabel" name="Date7Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>125</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Dec 14</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Time7Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>145</x>
+                    <y>0</y>
+                    <width>160</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>9:30am - 12:30pm</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+                
+            </widget>
+
+            <widget class="QLabel" name="CourseCode7Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>325</x>
+                    <y>0</y>
+                    <width>120</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>COMP3278</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="CourseTitle7Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>465</x>
+                    <y>0</y>
+                    <width>360</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>Introduction to database management systems</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Venue7Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>845</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>CPD-LG.07-10</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="Format7Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>965</x>
+                    <y>0</y>
+                    <width>185</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>One Cheatsheet</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+        </widget>  
+
+        <widget class="QWidget" name="Exam8">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>445</y>
+                <width>1150</width>
+                <height>50</height>
+                </rect>
+            </property>
+        
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+        
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <widget class="QLabel" name="Date8Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>125</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Dec 14</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Time8Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>145</x>
+                    <y>0</y>
+                    <width>160</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>9:30am - 12:30pm</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+                
+            </widget>
+
+            <widget class="QLabel" name="CourseCode8Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>325</x>
+                    <y>0</y>
+                    <width>120</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>COMP3278</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="CourseTitle8Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>465</x>
+                    <y>0</y>
+                    <width>360</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>Introduction to database management systems</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Venue8Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>845</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>CPD-LG.07-10</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="Format8Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>965</x>
+                    <y>0</y>
+                    <width>185</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>One Cheatsheet</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+        </widget>  
+
+        <widget class="QWidget" name="Exam9">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>480</y>
+                <width>1150</width>
+                <height>50</height>
+                </rect>
+            </property>
+        
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+        
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <widget class="QLabel" name="Date9Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>125</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Dec 14</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Time9Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>145</x>
+                    <y>0</y>
+                    <width>160</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>9:30am - 12:30pm</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+                
+            </widget>
+
+            <widget class="QLabel" name="CourseCode9Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>325</x>
+                    <y>0</y>
+                    <width>120</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>COMP3278</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="CourseTitle9Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>465</x>
+                    <y>0</y>
+                    <width>360</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>Introduction to database management systems</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Venue9Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>845</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>CPD-LG.07-10</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="Format9Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>965</x>
+                    <y>0</y>
+                    <width>185</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>One Cheatsheet</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+        </widget>  
+
+        <widget class="QWidget" name="Exam10">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>515</y>
+                <width>1150</width>
+                <height>50</height>
+                </rect>
+            </property>
+        
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+        
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <widget class="QLabel" name="Date10Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>125</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Dec 14</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Time10Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>145</x>
+                    <y>0</y>
+                    <width>160</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>9:30am - 12:30pm</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+                
+            </widget>
+
+            <widget class="QLabel" name="CourseCode10Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>325</x>
+                    <y>0</y>
+                    <width>120</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>COMP3278</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="CourseTitle10Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>465</x>
+                    <y>0</y>
+                    <width>360</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>Introduction to database management systems</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Venue10Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>845</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>CPD-LG.07-10</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="Format10Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>965</x>
+                    <y>0</y>
+                    <width>185</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>One Cheatsheet</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+        </widget>  
+
+        <widget class="QWidget" name="Exam11">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>550</y>
+                <width>1150</width>
+                <height>50</height>
+                </rect>
+            </property>
+        
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+        
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <widget class="QLabel" name="Date11Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>125</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Dec 14</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Time11Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>145</x>
+                    <y>0</y>
+                    <width>160</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>9:30am - 12:30pm</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+                
+            </widget>
+
+            <widget class="QLabel" name="CourseCode11Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>325</x>
+                    <y>0</y>
+                    <width>120</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>COMP3278</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="CourseTitle11Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>465</x>
+                    <y>0</y>
+                    <width>360</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>Introduction to database management systems</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Venue11Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>845</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>CPD-LG.07-10</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="Format11Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>965</x>
+                    <y>0</y>
+                    <width>185</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>One Cheatsheet</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+        </widget>  
+
+        <widget class="QWidget" name="Exam12">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>585</y>
+                <width>1150</width>
+                <height>50</height>
+                </rect>
+            </property>
+        
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+        
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>12</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <widget class="QLabel" name="Date12Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>125</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="text">
+                    <string>Dec 14</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Time12Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>145</x>
+                    <y>0</y>
+                    <width>160</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>9:30am - 12:30pm</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+                
+            </widget>
+
+            <widget class="QLabel" name="CourseCode12Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>325</x>
+                    <y>0</y>
+                    <width>120</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>COMP3278</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="CourseTitle12Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>465</x>
+                    <y>0</y>
+                    <width>360</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>Introduction to database management systems</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Venue12Label">
+            
+                <property name="geometry">
+                    <rect>
+                    <x>845</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>CPD-LG.07-10</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+            <widget class="QLabel" name="Format12Label">
+
+                <property name="geometry">
+                    <rect>
+                    <x>965</x>
+                    <y>0</y>
+                    <width>185</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+    
+                <property name="text">
+                    <string>One Cheatsheet</string>
+                </property>
+    
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+    
+            </widget>
+
+        </widget>  
+
+        <!-- ■ PreviousPageButton-->
+        <widget class="QPushButton" name="PreviousPageButton">
+
+            <property name="geometry">
+                <rect>
+                <x>400</x>
+                <y>710</y>
+                <width>100</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Previous</string>
+            </property>
+
+        </widget>
+
+        <!-- ■ PageLabelButton-->
+        <widget class="QLabel" name="PageLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>520</x>
+                <y>700</y>
+                <width>160</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                </font>
+            </property>
+            
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Page 1 of 5</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ NextPageButton-->
+        <widget class="QPushButton" name="NextPageButton">
+
+            <property name="geometry">
+                <rect>
+                <x>700</x>
+                <y>710</y>
+                <width>100</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Next</string>
+            </property>
+
+        </widget>
+
+    </widget>
+
+</widget>
+   
+<resources/>
+<connections/>
+</ui>

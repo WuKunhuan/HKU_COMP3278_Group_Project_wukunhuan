@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui version="4.0">
+
+	<class>facial_login_page</class>
+	<widget class="QWidget" name="facial_login_page">
+
+		<property name="geometry">
+			<rect>
+				<x>0</x>
+				<y>0</y>
+				<width>1200</width>
+				<height>800</height>
+			</rect>
+		</property>
+
+		<property name="windowTitle">
+			<string>FLS</string>
+		</property>
+
+		<widget class="QCommandLinkButton" name="ExitButton">
+
+			<property name="geometry">
+				<rect>
+					<x>1050</x>
+					<y>710</y>
+					<width>81</width>
+					<height>41</height>
+				</rect>
+			</property>
+
+			<property name="cursor">
+				<cursorShape>PointingHandCursor</cursorShape>
+			</property>
+
+			<property name="text">
+				<string>Quit</string>
+			</property>
+
+		</widget>
+
+		<widget class="QPushButton" name="VerifyButton">
+
+			<property name="geometry">
+				<rect>
+					<x>520</x>
+					<y>610</y>
+					<width>171</width>
+					<height>51</height>
+				</rect>
+			</property>
+
+			<property name="cursor">
+				<cursorShape>PointingHandCursor</cursorShape>
+			</property>
+
+			<property name="text">
+				<string>Verify</string>
+			</property>
+
+		</widget>
+
+		<widget class="QCommandLinkButton" name="pwd_LoginButton">
+
+			<property name="geometry">
+				<rect>
+					<x>874</x>
+					<y>660</y>
+					<width>241</width>
+					<height>41</height>
+				</rect>
+			</property>
+
+			<property name="cursor">
+				<cursorShape>PointingHandCursor</cursorShape>
+			</property>
+
+			<property name="text">
+				<string>Login with UID and Password</string>
+			</property>
+
+		</widget>
+
+		<widget class="QLabel" name="CameraArea">
+
+			<property name="geometry">
+				<rect>
+					<x>400</x>
+					<y>150</y>
+					<width>400</width>
+					<height>400</height>
+				</rect>
+			</property>
+
+			<property name="cursor">
+				<cursorShape>ForbiddenCursor</cursorShape>
+			</property>
+
+			<property name="styleSheet">
+				<string notr="true">QLabel{
+                    background: rgba(255, 255, 255, 0);
+                    border: 3px solid rgb(0, 0, 0);
+                    border-radius: 200px;
+                }</string>
+			</property>
+
+			<property name="text">
+				<string/>
+			</property>
+
+		</widget>
+
+		<widget class="QLabel" name="hint_label">
+
+			<property name="geometry">
+				<rect>
+					<x>390</x>
+					<y>70</y>
+					<width>451</width>
+					<height>61</height>
+				</rect>
+			</property>
+
+			<property name="text">
+				<string>(Hint Label)</string>
+			</property>
+
+		</widget>
+
+	</widget>
+
+	<resources/>
+	<connections/>
+
+</ui>

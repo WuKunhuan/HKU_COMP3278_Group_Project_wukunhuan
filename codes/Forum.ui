@@ -1,0 +1,1968 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>CourseForumWindow</class>
+
+<!-- ■ The whole window -->
+<widget class="QMainWindow" name="MainWindow">
+
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1200</width>
+            <height>800</height>
+        </rect>
+    </property>
+
+    <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+
+    <property name="font">
+        <font>
+            <family>Arial</family>
+        </font>
+    </property>
+
+    <property name="windowTitle">
+        <string>Class Management</string>
+    </property>
+
+    <!-- background color -->
+    <property name="styleSheet">
+        <string notr="true">QMainWindow{
+            background-color: rgb(246, 223, 200);
+        }
+        </string>
+    </property>
+
+    <!-- all components -->
+    <widget class="QWidget" name="main">
+
+        <!-- ■ BackButton -->
+        <widget class="QPushButton" name="BackButton">
+
+            <property name="geometry">
+                <rect>
+                <x>25</x>
+                <y>25</y>
+                <width>100</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-image : url(resources/back_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-image : url(resources/back_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-image : url(resources/back_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string></string>
+            </property>
+
+        </widget>
+
+        <!-- ■ HomeButton-->
+        <widget class="QPushButton" name="HomeButton">
+
+            <property name="geometry">
+                <rect>
+                <x>1075</x>
+                <y>25</y>
+                <width>100</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <!-- use the home icon image -->
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-image : url(resources/home_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-image : url(resources/home_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-image : url(resources/home_icon.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 5px;
+                        border: 2px solid #000000; 
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string></string>
+            </property>
+
+        </widget>
+
+        <!-- ■ ForumTitle-->
+        <widget class="QLabel" name="ForumTitle">
+
+            <property name="geometry">
+                <rect>
+                <x>160</x>
+                <y>20</y>
+                <width>440</width>
+                <height>60</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>30</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Course Forum</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ StudentLabel-->
+        <widget class="QLabel" name="StudentLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>60</x>
+                <y>100</y>
+                <width>100</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Student </string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ StudentSelect-->
+        <widget class="QComboBox" name="StudentSelect">
+
+            <property name="geometry">
+                <rect>
+                <x>170</x>
+                <y>100</y>
+                <width>200</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+                </font>
+            </property>
+
+            <property name="acceptDrops">
+                <bool>false</bool>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QComboBox{
+                        combobox-popup: 3; 
+                        background: rgb(255, 255, 255);
+                        border: none;
+                        border-radius: 10px black solid;
+                        color: black;
+                        padding-left: 10px;
+                    }
+                </string>
+            </property>
+
+            <property name="editable">
+                <bool>false</bool>
+            </property>
+
+            <property name="frame">
+                <bool>true</bool>
+            </property>
+
+        </widget>
+
+        <!-- ■ KeywordLabel-->
+        <widget class="QLabel" name="KeywordLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>385</x>
+                <y>100</y>
+                <width>110</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Keyword </string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ KeywordText-->
+        <widget class="QLineEdit" name="KeywordText">
+
+            <property name="geometry">
+                <rect>
+                <x>500</x>
+                <y>100</y>
+                <width>390</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="autoFillBackground">
+                <bool>false</bool>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">QLineEdit {
+                    border: 2px solid lightgray;
+                    border-radius: 5px;
+                    background: transparent;
+                    }
+                </string>
+            </property>
+
+        </widget>
+
+        <!-- ■ SearchButton-->
+        <widget class="QPushButton" name="SearchButton">
+
+            <property name="geometry">
+                <rect>
+                <x>920</x>
+                <y>100</y>
+                <width>100</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Search!</string>
+            </property>
+
+        </widget>
+
+        <!-- ■ FromLabel-->
+        <widget class="QLabel" name="FromLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>100</x>
+                <y>140</y>
+                <width>60</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>From </string>
+                </property>
+                <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ FromDate-->
+        <widget class="QDateTimeEdit" name="FromDate">
+
+            <property name="geometry">
+                <rect>
+                <x>170</x>
+                <y>140</y>
+                <width>200</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>16</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QDateTimeEdit {
+                        border: 2px solid lightgray;
+                        background: transparent;
+                        border-radius: 5px;
+                    }
+                    
+                    QDateTimeEdit::drop-down {
+                        subcontrol-origin: padding;
+                        subcontrol-position: top right;
+                        width: 15px;
+                    
+                        border-left-width: 1px;
+                        border-left-color: rgb(0, 55, 128);
+                        border-left-style: solid;
+                        border-top-right-radius: 3px;
+                        border-bottom-right-radius: 3px;
+                    }
+                </string>
+            </property>
+
+        </widget>
+
+        <!-- ■ ToLabel-->
+        <widget class="QLabel" name="ToLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>380</x>
+                <y>140</y>
+                <width>60</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>To </string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ ToDate-->
+        <widget class="QDateTimeEdit" name="ToDate">
+
+            <property name="geometry">
+                <rect>
+                <x>450</x>
+                <y>140</y>
+                <width>200</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>16</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QDateTimeEdit {
+                            border: 2px solid lightgray;
+                            background: transparent;
+                            border-radius: 5px;
+                        }
+                        
+                    QDateTimeEdit::drop-down {
+                        subcontrol-origin: padding;
+                        subcontrol-position: top right;
+                        width: 15px;
+                        border-left-width: 1px;
+                        border-left-color: rgb(0, 55, 128);
+                        border-left-style: solid;
+                        border-top-right-radius: 3px;
+                        border-bottom-right-radius: 3px;
+                    }
+                </string>
+            </property>
+
+        </widget>
+
+        <!-- ■ OrderByLabel -->
+        <widget class="QLabel" name="OrderByLabel">
+
+            <property name="geometry">
+                <rect>
+                    <x>660</x>
+                    <y>140</y>
+                    <width>100</width>
+                    <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>order by </string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ OrderBySelect -->
+        <widget class="QComboBox" name="OrderBySelect">
+
+            <property name="geometry">
+                <rect>
+                <x>780</x>
+                <y>140</y>
+                <width>150</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+                </font>
+            </property>
+
+            <property name="acceptDrops">
+                <bool>false</bool>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">QComboBox{
+                    background: rgb(255, 255, 255);
+                    border: none;
+                    border-radius: 10px black solid;
+                    color: black;
+                    padding-left: 10px;
+                }
+                </string>
+            </property>
+
+            <property name="editable">
+                <bool>false</bool>
+            </property>
+
+            <property name="frame">
+                <bool>true</bool>
+            </property>
+
+            <item>
+                <property name="text">
+                <string>Post time</string>
+                </property>
+            </item>
+
+            <item>
+                <property name="text">
+                <string>Likes</string>
+                </property>
+            </item>
+
+            <item>
+                <property name="text">
+                <string>Student</string>
+                </property>
+            </item>
+
+            <item>
+                <property name="text">
+                <string>Course</string>
+                </property>
+            </item>
+
+        </widget>
+
+        <!-- ■ OrderByAscend -->
+        <widget class="QPushButton" name="OrderByAscend">
+
+            <property name="geometry">
+                <rect>
+                <x>945</x>
+                <y>140</y>
+                <width>30</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>↑</string>
+            </property>
+
+        </widget>
+
+        <!-- ■ OrderByDescend -->
+        <widget class="QPushButton" name="OrderByDescend">
+
+            <property name="geometry">
+                <rect>
+                <x>990</x>
+                <y>140</y>
+                <width>30</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>↓</string>
+            </property>
+
+        </widget>
+
+        <!-- ■ Comment1-->
+        <widget class="QWidget" name="Comment1">
+
+            <property name="geometry">
+                <rect>
+                <x>100</x>
+                <y>200</y>
+                <width>1075</width>
+                <height>130</height>
+                </rect>
+            </property>
+
+            <widget class="QPushButton" name="Avatar1">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>100</height>
+                    </rect>
+                </property>
+    
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>12</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                    </font>
+                </property>
+    
+                <property name="cursor">
+                    <cursorShape>ArrowCursor</cursorShape>
+                </property>
+    
+                <property name="styleSheet">
+                    <string notr="true">
+                        QPushButton{
+                            background: rgb(255, 255, 255);
+                            background-image : url(resources/avatar_m_1.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            border-radius: 50px;
+                        }           
+                    </string>
+                </property>
+    
+                <property name="text">
+                    <string/>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Avatar1Name">
+
+                <property name="geometry">
+                    <rect>
+                    <x>120</x>
+                    <y>15</y>
+                    <width>150</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>20</pointsize>
+                    <weight>40</weight>
+                    <bold>false</bold>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            color: rgb(0, 0, 0);
+                        }
+                    </string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+    
+            <widget class="QLabel" name="PostDate1">
+
+                <property name="geometry">
+                    <rect>
+                    <x>120</x>
+                    <y>45</y>
+                    <width>150</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+                
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>20</pointsize>
+                    <weight>40</weight>
+                    <bold>false</bold>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            color: rgb(0, 0, 0);
+                        }
+                    </string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+    
+            <widget class="QLabel" name="Avatar1Comment">
+
+                <property name="geometry">
+                    <rect>
+                    <x>300</x>
+                    <y>0</y>
+                    <width>620</width>
+                    <height>100</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Times New Roman</family>
+                    <weight>50</weight>
+                    <pointsize>20</pointsize>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            background-color: white; 
+                            color: rgb(0, 0, 0);
+                            padding: 10px; 
+                            font-style: oblique;
+                        }
+                    </string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignLeft|Qt::AlignLeading</set>
+                </property>
+
+
+            </widget>
+    
+            <widget class="QLabel" name="Comment1LikeLabel">
+
+                <property name="geometry">
+                    <rect>
+                    <x>940</x>
+                    <y>35</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>20</pointsize>
+                    <weight>40</weight>
+                    <bold>false</bold>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            color: rgb(0, 0, 0);
+                        }
+                    </string>
+                </property>
+
+                <property name="text">
+                    <string>20 likes</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+    
+            <widget class="QPushButton" name="Comment1LikeButton">
+
+                <property name="geometry">
+                    <rect>
+                    <x>940</x>
+                    <y>70</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>20</pointsize>
+                    </font>
+                </property>
+
+                <property name="cursor">
+                    <cursorShape>ArrowCursor</cursorShape>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QPushButton{
+                            background: rgb(255, 255, 255);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                        QPushButton:hover{
+                            background: rgb(224, 224, 224);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                        QPushButton:pressed{
+                            background: rgb(192, 192, 192);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                    </string>
+                </property>
+
+                <property name="text">
+                    <string>Like</string>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Comment1Course">
+
+                <property name="geometry">
+                    <rect>
+                    <x>785</x>
+                    <y>75</y>
+                    <width>175</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>12</pointsize>
+                    <weight>30</weight>
+                    <bold>false</bold>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            color: rgb(128, 128, 128);
+                        }
+                    </string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>            
+
+        </widget>
+
+        <!-- ■ Comment2-->
+        <widget class="QWidget" name="Comment2">
+
+            <property name="geometry">
+                <rect>
+                <x>100</x>
+                <y>330</y>
+                <width>1075</width>
+                <height>130</height>
+                </rect>
+            </property>
+
+            <widget class="QPushButton" name="Avatar2">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>100</height>
+                    </rect>
+                </property>
+    
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>12</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                    </font>
+                </property>
+    
+                <property name="cursor">
+                    <cursorShape>ArrowCursor</cursorShape>
+                </property>
+    
+                <property name="styleSheet">
+                    <string notr="true">
+                        QPushButton{
+                            background: rgb(255, 255, 255);
+                            background-image : url(resources/avatar_m_1.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            border-radius: 50px;
+                        }
+                        QPushButton:hover{
+                            background: rgb(255, 255, 255);
+                            background-image : url(resources/avatar_m_1.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            border-radius: 50px;
+                        }
+                        QPushButton:pressed{
+                            background: rgb(255, 255, 255);
+                            background-image : url(resources/avatar_m_1.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            border-radius: 50px;
+                        }            
+                    </string>
+                </property>
+    
+                <property name="text">
+                    <string/>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Avatar2Name">
+
+                <property name="geometry">
+                    <rect>
+                    <x>120</x>
+                    <y>15</y>
+                    <width>150</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>20</pointsize>
+                    <weight>40</weight>
+                    <bold>false</bold>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            color: rgb(0, 0, 0);
+                        }
+                    </string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+    
+            <widget class="QLabel" name="PostDate2">
+
+                <property name="geometry">
+                    <rect>
+                    <x>120</x>
+                    <y>45</y>
+                    <width>150</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+                
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>20</pointsize>
+                    <weight>40</weight>
+                    <bold>false</bold>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            color: rgb(0, 0, 0);
+                        }
+                    </string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+    
+            <widget class="QLabel" name="Avatar2Comment">
+
+                <property name="geometry">
+                    <rect>
+                    <x>300</x>
+                    <y>0</y>
+                    <width>620</width>
+                    <height>100</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Times New Roman</family>
+                    <weight>50</weight>
+                    <pointsize>20</pointsize>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            background-color: white; 
+                            color: rgb(0, 0, 0);
+                            padding: 10px; 
+                            font-style: oblique;
+                        }
+                    </string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignLeft|Qt::AlignLeading</set>
+                </property>
+
+
+            </widget>
+    
+            <widget class="QLabel" name="Comment2LikeLabel">
+
+                <property name="geometry">
+                    <rect>
+                    <x>940</x>
+                    <y>35</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>20</pointsize>
+                    <weight>40</weight>
+                    <bold>false</bold>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            color: rgb(0, 0, 0);
+                        }
+                    </string>
+                </property>
+
+                <property name="text">
+                    <string>20 likes</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+    
+            <widget class="QPushButton" name="Comment2LikeButton">
+
+                <property name="geometry">
+                    <rect>
+                    <x>940</x>
+                    <y>70</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>20</pointsize>
+                    </font>
+                </property>
+
+                <property name="cursor">
+                    <cursorShape>ArrowCursor</cursorShape>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QPushButton{
+                            background: rgb(255, 255, 255);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                        QPushButton:hover{
+                            background: rgb(224, 224, 224);
+                            
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                        QPushButton:pressed{
+                            background: rgb(192, 192, 192);
+                            
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                    </string>
+                </property>
+
+                <property name="text">
+                    <string>Like</string>
+                </property>
+
+            </widget>  
+
+            <widget class="QLabel" name="Comment2Course">
+
+                <property name="geometry">
+                    <rect>
+                    <x>785</x>
+                    <y>75</y>
+                    <width>175</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>12</pointsize>
+                    <weight>30</weight>
+                    <bold>false</bold>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            color: rgb(128, 128, 128);
+                        }
+                    </string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>            
+
+        </widget>
+
+        <!-- ■ Comment3-->
+        <widget class="QWidget" name="Comment3">
+
+            <property name="geometry">
+                <rect>
+                <x>100</x>
+                <y>460</y>
+                <width>1075</width>
+                <height>130</height>
+                </rect>
+            </property>
+
+            <widget class="QPushButton" name="Avatar3">
+
+                <property name="geometry">
+                    <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>100</width>
+                    <height>100</height>
+                    </rect>
+                </property>
+    
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>12</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                    </font>
+                </property>
+    
+                <property name="cursor">
+                    <cursorShape>ArrowCursor</cursorShape>
+                </property>
+    
+                <property name="styleSheet">
+                    <string notr="true">
+                        QPushButton{
+                            background: rgb(255, 255, 255);
+                            background-image : url(resources/avatar_m_1.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            border-radius: 50px;
+                        }
+                        QPushButton:hover{
+                            background: rgb(255, 255, 255);
+                            background-image : url(resources/avatar_m_1.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            border-radius: 50px;
+                        }
+                        QPushButton:pressed{
+                            background: rgb(255, 255, 255);
+                            background-image : url(resources/avatar_m_1.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            border-radius: 50px;
+                        }            
+                    </string>
+                </property>
+    
+                <property name="text">
+                    <string/>
+                </property>
+    
+            </widget>
+    
+            <widget class="QLabel" name="Avatar3Name">
+
+                <property name="geometry">
+                    <rect>
+                    <x>120</x>
+                    <y>15</y>
+                    <width>150</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>20</pointsize>
+                    <weight>40</weight>
+                    <bold>false</bold>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            color: rgb(0, 0, 0);
+                        }
+                    </string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+    
+            <widget class="QLabel" name="PostDate3">
+
+                <property name="geometry">
+                    <rect>
+                    <x>120</x>
+                    <y>45</y>
+                    <width>150</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+                
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>20</pointsize>
+                    <weight>40</weight>
+                    <bold>false</bold>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            color: rgb(0, 0, 0);
+                        }
+                    </string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+    
+            <widget class="QLabel" name="Avatar3Comment">
+
+                <property name="geometry">
+                    <rect>
+                    <x>300</x>
+                    <y>0</y>
+                    <width>620</width>
+                    <height>100</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Times New Roman</family>
+                    <weight>50</weight>
+                    <pointsize>20</pointsize>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            background-color: white; 
+                            color: rgb(0, 0, 0);
+                            padding: 10px; 
+                            font-style: oblique;
+                        }
+                    </string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignLeft|Qt::AlignLeading</set>
+                </property>
+
+            </widget>
+    
+            <widget class="QLabel" name="Comment3LikeLabel">
+
+                <property name="geometry">
+                    <rect>
+                    <x>940</x>
+                    <y>35</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>20</pointsize>
+                    <weight>40</weight>
+                    <bold>false</bold>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            color: rgb(0, 0, 0);
+                        }
+                    </string>
+                </property>
+
+                <property name="text">
+                    <string>20 likes</string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>
+    
+            <widget class="QPushButton" name="Comment3LikeButton">
+
+                <property name="geometry">
+                    <rect>
+                    <x>940</x>
+                    <y>70</y>
+                    <width>100</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>20</pointsize>
+                    </font>
+                </property>
+
+                <property name="cursor">
+                    <cursorShape>ArrowCursor</cursorShape>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QPushButton{
+                            background: rgb(255, 255, 255);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                        QPushButton:hover{
+                            background: rgb(224, 224, 224);
+                            
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                        QPushButton:pressed{
+                            background: rgb(192, 192, 192);
+                            
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                    </string>
+                </property>
+
+                <property name="text">
+                    <string>Like</string>
+                </property>
+
+            </widget>
+
+            <widget class="QLabel" name="Comment3Course">
+
+                <property name="geometry">
+                    <rect>
+                    <x>785</x>
+                    <y>75</y>
+                    <width>175</width>
+                    <height>30</height>
+                    </rect>
+                </property>
+
+                <property name="font">
+                    <font>
+                    <family>Arial</family>
+                    <pointsize>12</pointsize>
+                    <weight>30</weight>
+                    <bold>false</bold>
+                    </font>
+                </property>
+
+                <property name="styleSheet">
+                    <string notr="true">
+                        QLabel{
+                            color: rgb(128, 128, 128);
+                        }
+                    </string>
+                </property>
+
+                <property name="alignment">
+                    <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+                </property>
+
+            </widget>            
+
+
+        </widget>
+
+        <!-- ■ NoCommentFound-->
+        <widget class="QLabel" name="NoCommentFound">
+
+            <property name="geometry">
+                <rect>
+                <x>400</x>
+                <y>200</y>
+                <width>400</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>16</pointsize>
+                <weight>50</weight>
+                </font>
+            </property>
+
+            <property name="text">
+                <string></string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ PreviousPage-->
+        <widget class="QPushButton" name="PreviousPageButton">
+
+            <property name="geometry">
+                <rect>
+                <x>400</x>
+                <y>610</y>
+                <width>100</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Previous</string>
+            </property>
+
+        </widget>
+
+        <!-- ■ PageLabel-->
+        <widget class="QLabel" name="PageLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>520</x>
+                <y>600</y>
+                <width>160</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                </font>
+            </property>
+            
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Page 1 of 5</string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignCenter|Qt::AlignHCenter|Qt::AlignLeading|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ NextPage-->
+        <widget class="QPushButton" name="NextPageButton">
+
+            <property name="geometry">
+                <rect>
+                <x>700</x>
+                <y>610</y>
+                <width>100</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Next</string>
+            </property>
+
+        </widget>
+
+        <!-- ■ ForumPostLabel-->
+        <widget class="QLabel" name="ForumPostLabel">
+
+            <property name="geometry">
+                <rect>
+                <x>20</x>
+                <y>670</y>
+                <width>260</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                </font>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QLabel{
+                        color: rgb(0, 0, 0);
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Your comment: </string>
+            </property>
+
+            <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignVCenter</set>
+            </property>
+
+        </widget>
+
+        <!-- ■ ForumPostText-->
+        <widget class="QLineEdit" name="ForumPostText">
+
+            <property name="geometry">
+                <rect>
+                <x>300</x>
+                <y>670</y>
+                <width>600</width>
+                <height>50</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="autoFillBackground">
+                <bool>false</bool>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">QLineEdit {
+                    border: 2px solid lightgray;
+                    border-radius: 5px;
+                    background: transparent;
+                    }
+                </string>
+            </property>
+
+        </widget>
+
+        <!-- ■ ForumPostButton-->
+        <widget class="QPushButton" name="ForumPostButton">
+
+            <property name="geometry">
+                <rect>
+                <x>920</x>
+                <y>680</y>
+                <width>100</width>
+                <height>30</height>
+                </rect>
+            </property>
+
+            <property name="font">
+                <font>
+                <family>Arial</family>
+                <pointsize>20</pointsize>
+                </font>
+            </property>
+
+            <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+            </property>
+
+            <property name="styleSheet">
+                <string notr="true">
+                    QPushButton{
+                        background: rgb(255, 255, 255);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:hover{
+                        background: rgb(224, 224, 224);
+                        
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    QPushButton:pressed{
+                        background: rgb(192, 192, 192);
+                        
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                </string>
+            </property>
+
+            <property name="text">
+                <string>Post</string>
+            </property>
+
+        </widget>
+
+    </widget>
+
+</widget>
+
+    <resources/>
+    <connections/>
+</ui>
